@@ -1,15 +1,14 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
 <title>VW Iltis Typ 183</title>
 
 <style>
-
-/* =========================
-   Grundeinstellungen
-   ========================= */
 
 * {
     box-sizing: border-box;
@@ -28,10 +27,6 @@ body {
     color: #333;
 }
 
-/* =========================
-   Hauptcontainer
-   ========================= */
-
 .container {
     width: 100%;
     max-width: 1000px;
@@ -44,10 +39,6 @@ body {
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
 }
 
-/* =========================
-   Überschrift
-   ========================= */
-
 h1 {
     margin: 0 0 12px 0;
 
@@ -58,10 +49,6 @@ h1 {
     line-height: 1.2;
 }
 
-/* =========================
-   Untertitel
-   ========================= */
-
 .subtitle {
     margin: 8px 0;
 
@@ -70,10 +57,6 @@ h1 {
     font-size: clamp(1rem, 3.5vw, 1.2rem);
     line-height: 1.5;
 }
-
-/* =========================
-   Bild
-   ========================= */
 
 img {
     display: block;
@@ -88,10 +71,6 @@ img {
 
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
-
-/* =========================
-   Technische Daten
-   ========================= */
 
 .daten {
     display: grid;
@@ -113,9 +92,82 @@ img {
     font-size: clamp(0.95rem, 2vw, 1rem);
 }
 
-/* =========================
+
+/* =================================
+   Buttons
+   ================================= */
+
+.buttons {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 35px;
+    padding-top: 25px;
+
+    border-top: 1px solid #ddd;
+}
+
+.button {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 55px;
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    font-size: 1.05rem;
+    font-weight: bold;
+
+    text-decoration: none;
+    text-align: center;
+
+    transition: transform 0.15s ease,
+                box-shadow 0.15s ease,
+                background-color 0.15s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Kontakt-Button */
+
+.button-kontakt {
+    background-color: #2c3e50;
+    color: white;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.button-kontakt:hover {
+    background-color: #1f2d3a;
+}
+
+/* Zurück-Button */
+
+.button-zurueck {
+    background-color: #e9ecef;
+    color: #333;
+
+    border: 1px solid #d0d4d8;
+}
+
+.button-zurueck:hover {
+    background-color: #dde1e4;
+}
+
+/* Klick-Effekt für Smartphone */
+
+.button:active {
+    transform: scale(0.97);
+}
+
+
+/* =================================
    Mobile Geräte
-   ========================= */
+   ================================= */
 
 @media (max-width: 700px) {
 
@@ -125,7 +177,6 @@ img {
 
     .container {
         padding: 16px 14px;
-
         border-radius: 10px;
     }
 
@@ -144,9 +195,7 @@ img {
 
     .daten {
         grid-template-columns: 1fr;
-
         gap: 0;
-
         margin-top: 20px;
     }
 
@@ -157,18 +206,35 @@ img {
     .daten p {
         margin: 0;
         padding: 9px 4px;
-
         border-bottom: 1px solid #e5e5e5;
     }
 
     .daten p:last-child {
         border-bottom: none;
     }
+
+    /* Buttons untereinander */
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+
+        margin-top: 30px;
+        padding-top: 20px;
+    }
+
+    .button {
+        width: 100%;
+        min-height: 58px;
+
+        font-size: 1.05rem;
+    }
 }
 
-/* =========================
+
+/* =================================
    Sehr kleine Smartphones
-   ========================= */
+   ================================= */
 
 @media (max-width: 380px) {
 
@@ -191,6 +257,11 @@ img {
     .daten p {
         font-size: 0.92rem;
         padding: 8px 2px;
+    }
+
+    .button {
+        min-height: 55px;
+        font-size: 1rem;
     }
 }
 
@@ -225,139 +296,68 @@ img {
 
     <div>
 
-        <p>
-            <strong>Motor:</strong>
-            55 kW (75 PS) / 1714 ccm
-        </p>
-
-        <p>
-            <strong>Sitzplätze:</strong>
-            1 + 3
-        </p>
-
-        <p>
-            <strong>Antrieb:</strong>
-            4×4
-        </p>
-
-        <p>
-            <strong>Leergewicht:</strong>
-            1550 kg
-        </p>
-
-        <p>
-            <strong>Zulässiges Gesamtgewicht:</strong>
-            2050 kg
-        </p>
-
-        <p>
-            <strong>Nutzlast:</strong>
-            500 kg
-        </p>
-
-        <p>
-            <strong>Zuglast gebremst:</strong>
-            2000 kg
-        </p>
-
-        <p>
-            <strong>Zuglast ungebremst:</strong>
-            750 kg
-        </p>
-
-        <p>
-            <strong>Länge:</strong>
-            395,4 cm
-        </p>
-
-        <p>
-            <strong>Breite:</strong>
-            152,0 cm
-        </p>
-
-        <p>
-            <strong>Höhe:</strong>
-            183,7 cm
-        </p>
-
-        <p>
-            <strong>Bodenfreiheit:</strong>
-            22,5 cm
-        </p>
+        <p><strong>Motor:</strong> 55 kW (75 PS) / 1714 ccm</p>
+        <p><strong>Sitzplätze:</strong> 1 + 3</p>
+        <p><strong>Antrieb:</strong> 4×4</p>
+        <p><strong>Leergewicht:</strong> 1550 kg</p>
+        <p><strong>Zulässiges Gesamtgewicht:</strong> 2050 kg</p>
+        <p><strong>Nutzlast:</strong> 500 kg</p>
+        <p><strong>Zuglast gebremst:</strong> 2000 kg</p>
+        <p><strong>Zuglast ungebremst:</strong> 750 kg</p>
+        <p><strong>Länge:</strong> 395,4 cm</p>
+        <p><strong>Breite:</strong> 152,0 cm</p>
+        <p><strong>Höhe:</strong> 183,7 cm</p>
+        <p><strong>Bodenfreiheit:</strong> 22,5 cm</p>
 
     </div>
 
 
     <div>
 
-        <p>
-            <strong>Spurbreite vorn:</strong>
-            123,0 cm
-        </p>
-
-        <p>
-            <strong>Spurbreite hinten:</strong>
-            126,0 cm
-        </p>
-
-        <p>
-            <strong>Radstand:</strong>
-            201,7 cm
-        </p>
-
-        <p>
-            <strong>Höchstgeschwindigkeit:</strong>
-            130 km/h
-        </p>
-
-        <p>
-            <strong>Tankinhalt:</strong>
-            85 Liter
-        </p>
-
-        <p>
-            <strong>Reichweite:</strong>
-            ca. 700 km
-        </p>
-
-        <p>
-            <strong>Steigfähigkeit:</strong>
-            77 %
-        </p>
-
-        <p>
-            <strong>Watfähigkeit:</strong>
-            60 cm
-        </p>
-
-        <p>
-            <strong>Getriebe:</strong>
-            5 Vorwärtsgänge + Rückwärtsgang
-        </p>
-
-        <p>
-            <strong>Wenderadius:</strong>
-            5,5 m
-        </p>
-
-        <p>
-            <strong>Reifen:</strong>
-            6.50 R16
-        </p>
-
-        <p>
-            <strong>Bordnetz:</strong>
-            24 Volt
-        </p>
-
-        <p>
-            <strong>Batterien:</strong>
-            2 × 12 Volt, 45 Ah
-        </p>
+        <p><strong>Spurbreite vorn:</strong> 123,0 cm</p>
+        <p><strong>Spurbreite hinten:</strong> 126,0 cm</p>
+        <p><strong>Radstand:</strong> 201,7 cm</p>
+        <p><strong>Höchstgeschwindigkeit:</strong> 130 km/h</p>
+        <p><strong>Tankinhalt:</strong> 85 Liter</p>
+        <p><strong>Reichweite:</strong> ca. 700 km</p>
+        <p><strong>Steigfähigkeit:</strong> 77 %</p>
+        <p><strong>Watfähigkeit:</strong> 60 cm</p>
+        <p><strong>Getriebe:</strong> 5 Vorwärtsgänge + Rückwärtsgang</p>
+        <p><strong>Wenderadius:</strong> 5,5 m</p>
+        <p><strong>Reifen:</strong> 6.50 R16</p>
+        <p><strong>Bordnetz:</strong> 24 Volt</p>
+        <p><strong>Batterien:</strong> 2 × 12 Volt, 45 Ah</p>
 
     </div>
 
 </div>
+
+
+<!-- =========================
+     Buttons
+     ========================= -->
+
+<div class="buttons">
+
+    <a
+        href="https://formspree.io/f/mwlpavol"
+        class="button button-kontakt"
+    >
+        📩 Kontakt aufnehmen
+    </a>
+
+    <a
+        href="javascript:history.back()"
+        class="button button-zurueck"
+    >
+        ← Zurück
+    </a>
+
 </div>
+```
+
+</div>
+
 </body>
 </html>
+
