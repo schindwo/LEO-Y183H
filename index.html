@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+
+<html lang="de">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+   content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>VW Iltis Typ 183</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 10px;
+
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+
+    background-color: #f1f3f4;
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 0 auto;
+    padding: clamp(16px, 4vw, 30px);
+
+    background-color: #ffffff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+}
+
+
+/* =====================================================
+   ÜBERSCHRIFT
+   ===================================================== */
+
+h1 {
+    margin: 0 0 12px 0;
+
+    text-align: center;
+
+    color: #2c3e50;
+
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+    line-height: 1.2;
+}
+
+.subtitle {
+    margin: 8px 0;
+
+    text-align: center;
+
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+    line-height: 1.5;
+}
+
+
+/* =====================================================
+   BILD
+   ===================================================== */
+
+img {
+    display: block;
+
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+
+    margin: 22px auto;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* =====================================================
+   TECHNISCHE DATEN
+   ===================================================== */
+
+.daten {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 25px;
+
+    margin-top: 25px;
+}
+
+.daten > div {
+    padding: 5px;
+}
+
+.daten p {
+    margin: 7px 0;
+
+    font-size: clamp(0.95rem, 2vw, 1rem);
+}
+
+
+/* =====================================================
+   KONTAKTBEREICH
+   ===================================================== */
+
+.kontakt {
+    margin-top: 35px;
+    padding-top: 25px;
+
+    border-top: 1px solid #ddd;
+}
+
+.kontakt h2 {
+    margin: 0 0 8px 0;
+
+    text-align: center;
+
+    color: #2c3e50;
+
+    font-size: clamp(1.35rem, 4vw, 1.7rem);
+}
+
+.kontakt-info {
+    margin: 0 0 20px 0;
+
+    text-align: center;
+
+    font-size: 1rem;
+
+    color: #555;
+}
+
+
+/* =====================================================
+   GPS STATUS
+   ===================================================== */
+
+.gps-status {
+    margin: 0 0 18px 0;
+    padding: 12px;
+
+    border-radius: 9px;
+
+    background-color: #f4f6f7;
+
+    text-align: center;
+
+    font-size: 0.95rem;
+}
+
+.gps-status.erfolgreich {
+    background-color: #eaf6ed;
+    color: #246b35;
+}
+
+.gps-status.warnung {
+    background-color: #fff7df;
+    color: #765b00;
+}
+
+
+/* =====================================================
+   MELDUNGSBUTTONS
+   ===================================================== */
+
+.message-buttons {
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+.message-button {
+    width: 100%;
+
+    min-height: 60px;
+
+    padding: 14px 18px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #2c3e50;
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 1.05rem;
+    font-weight: bold;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.12s ease,
+        background-color 0.12s ease;
+}
+
+.message-button:hover {
+    background-color: #1f2d3a;
+}
+
+.message-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =====================================================
+   FORMULAR
+   ===================================================== */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #cfd4d8;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+textarea {
+    display: block;
+
+    width: 100%;
+
+    min-height: 110px;
+
+    padding: 12px;
+
+    border: 1px solid #cfd4d8;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    resize: vertical;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+
+    border-color: #2c3e50;
+
+    box-shadow:
+        0 0 0 2px rgba(44, 62, 80, 0.12);
+}
+
+.eigene-nachricht {
+    margin-top: 15px;
+}
+
+.eigene-nachricht label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   GOOGLE MAPS LINK
+   ===================================================== */
+
+.maps-link {
+    display: none;
+
+    margin-top: 10px;
+
+    color: #2c3e50;
+
+    font-weight: bold;
+
+    text-decoration: underline;
+}
+
+.maps-link.visible {
+    display: block;
+}
+
+
+/* =====================================================
+   SENDEN
+   ===================================================== */
+
+.submit-button {
+    display: block;
+
+    width: 100%;
+
+    min-height: 60px;
+
+    margin-top: 18px;
+
+    padding: 14px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background-color: #2c3e50;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.18);
+}
+
+.submit-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =====================================================
+   ZURÜCK
+   ===================================================== */
+
+.back-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 55px;
+
+    margin-top: 12px;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    border: 1px solid #d0d4d8;
+
+    background-color: #e9ecef;
+
+    color: #333;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 701px) {
+
+    .message-buttons {
+        display: grid;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 12px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 7px;
+    }
+
+    .container {
+        padding: 16px 14px;
+    }
+
+    .daten {
+        grid-template-columns: 1fr;
+
+        gap: 0;
+    }
+
+    .daten > div {
+        padding: 0;
+    }
+
+    .daten p {
+        margin: 0;
+
+        padding: 9px 4px;
+
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .daten p:last-child {
+        border-bottom: none;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .message-button {
+        min-height: 60px;
+    }
+
+}
+
+
+/* =====================================================
+   KLEINE SMARTPHONES
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    body {
+        padding: 5px;
+    }
+
+    .container {
+        padding: 14px 11px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .daten p {
+        font-size: 0.92rem;
+    }
+
+    .message-button {
+        min-height: 57px;
+
+        font-size: 1rem;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<!-- =================================================
+     ILTIS
+     ================================================= -->
+
+<h1>Ich bin ein VW-Iltis Typ 183</h1>
+
+
+<p class="subtitle">
+    Erstzulassung:
+    <strong>29.04.1980</strong>
+</p>
+
+
+<p class="subtitle">
+    Gedient als
+    <strong>Y-211 062</strong>
+    an der HFlaS,
+    der Heeresflugabwehrschule in Rendsburg.
+</p>
+
+
+<img
+    src="Bild1.jpg"
+    alt="VW Iltis Y-211 062"
+>
+
+
+<!-- =================================================
+     TECHNISCHE DATEN
+     ================================================= -->
+
+<div class="daten">
+
+    <div>
+
+        <p><strong>Motor:</strong> 55 kW (75 PS) / 1714 ccm</p>
+        <p><strong>Sitzplätze:</strong> 1 + 3</p>
+        <p><strong>Antrieb:</strong> 4×4</p>
+        <p><strong>Leergewicht:</strong> 1550 kg</p>
+        <p><strong>Zulässiges Gesamtgewicht:</strong> 2050 kg</p>
+        <p><strong>Nutzlast:</strong> 500 kg</p>
+        <p><strong>Zuglast gebremst:</strong> 2000 kg</p>
+        <p><strong>Zuglast ungebremst:</strong> 750 kg</p>
+        <p><strong>Länge:</strong> 395,4 cm</p>
+        <p><strong>Breite:</strong> 152,0 cm</p>
+        <p><strong>Höhe:</strong> 183,7 cm</p>
+        <p><strong>Bodenfreiheit:</strong> 22,5 cm</p>
+
+    </div>
+
+
+    <div>
+
+        <p><strong>Spurbreite vorn:</strong> 123,0 cm</p>
+        <p><strong>Spurbreite hinten:</strong> 126,0 cm</p>
+        <p><strong>Radstand:</strong> 201,7 cm</p>
+        <p><strong>Höchstgeschwindigkeit:</strong> 130 km/h</p>
+        <p><strong>Tankinhalt:</strong> 85 Liter</p>
+        <p><strong>Reichweite:</strong> ca. 700 km</p>
+        <p><strong>Steigfähigkeit:</strong> 77 %</p>
+        <p><strong>Watfähigkeit:</strong> 60 cm</p>
+        <p><strong>Getriebe:</strong> 5 Vorwärtsgänge + Rückwärtsgang</p>
+        <p><strong>Wenderadius:</strong> 5,5 m</p>
+        <p><strong>Reifen:</strong> 6.50 R16</p>
+        <p><strong>Bordnetz:</strong> 24 Volt</p>
+        <p><strong>Batterien:</strong> 2 × 12 Volt, 45 Ah</p>
+
+    </div>
+
+</div>
+
+
+<!-- =================================================
+     KONTAKT
+     ================================================= -->
+
+<div class="kontakt">
+
+    <h2>📩 Kontakt aufnehmen</h2>
+
+    <p class="kontakt-info">
+        Ist dir am Fahrzeug etwas aufgefallen?
+        Wähle einfach die passende Meldung.
+    </p>
+
+
+    <!-- GPS STATUS -->
+
+    <div
+        id="gpsStatus"
+        class="gps-status"
+    >
+        📍 Standort wird ermittelt ...
+    </div>
+
+
+    <!-- MELDUNGSBUTTONS -->
+
+    <div class="message-buttons">
+
+        <button
+            type="button"
+            class="message-button"
+            onclick="setMeldung('💡 Das Licht brennt')"
+        >
+            💡 Das Licht brennt
+        </button>
+
+
+        <button
+            type="button"
+            class="message-button"
+            onclick="setMeldung('🚪 Tür oder Fenster offen')"
+        >
+            🚪 Tür oder Fenster offen
+        </button>
+
+
+        <button
+            type="button"
+            class="message-button"
+            onclick="setMeldung('⚠️ Etwas am Fahrzeug aufgefallen')"
+        >
+            ⚠️ Etwas am Fahrzeug aufgefallen
+        </button>
+
+
+        <button
+            type="button"
+            class="message-button"
+            onclick="setMeldung('💥 Mögliche Beschädigung')"
+        >
+            💥 Mögliche Beschädigung
+        </button>
+
+    </div>
+
+
+    <!-- =================================================
+         FORMSPREE
+         ================================================= -->
+
+    <form
+        action="https://formspree.io/f/mwlpavol"
+        method="POST"
+        onsubmit="prepareForm()"
+    >
+
+
+        <!-- KENNZElCHEN / UHRZEIT -->
+
+        <div class="form-row">
+
+            <div class="form-group">
+
+                <label for="kennzeichen">
+                    Kennzeichen
+                </label>
+
+                <input
+                    type="text"
+                    id="kennzeichen"
+                    name="Kennzeichen"
+                    value="LEO-Y183H"
+                    readonly
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="zeitpunkt">
+                    Uhrzeit
+                </label>
+
+                <input
+                    type="text"
+                    id="zeitpunkt"
+                    name="Zeitpunkt"
+                    readonly
+                >
+
+            </div>
+
+        </div>
+
+
+        <!-- MELDUNG -->
+
+        <div class="eigene-nachricht">
+
+            <label for="meldung">
+                Meldung
+            </label>
+
+            <textarea
+                id="meldung"
+                name="Meldung"
+                placeholder="Hier kannst du noch weitere Informationen eingeben..."
+            ></textarea>
+
+        </div>
+
+
+        <!-- =================================================
+             GPS DATEN
+             ================================================= -->
+
+        <input
+            type="hidden"
+            id="latitude"
+            name="Breitengrad"
+        >
+
+        <input
+            type="hidden"
+            id="longitude"
+            name="Laengengrad"
+        >
+
+        <input
+            type="hidden"
+            id="maps"
+            name="Google_Maps"
+        >
+
+        <input
+            type="hidden"
+            id="standort"
+            name="Standort"
+        >
+
+
+        <!-- AUTOMATISCHER BETREFF -->
+
+        <input
+            type="hidden"
+            id="subject"
+            name="_subject"
+        >
+
+
+        <!-- GOOGLE MAPS LINK -->
+
+        <a
+            id="mapsLink"
+            class="maps-link"
+            href="#"
+            target="_blank"
+            rel="noopener"
+        >
+            📍 Standort auf Google Maps anzeigen
+        </a>
+
+
+        <!-- SENDEN -->
+
+        <button
+            type="submit"
+            class="submit-button"
+        >
+            ✉️ Nachricht senden
+        </button>
+
+
+    </form>
+
+
+    <!-- ZURÜCK -->
+
+    <a
+        href="javascript:history.back()"
+        class="back-button"
+    >
+        ← Zurück
+    </a>
+
+
+</div>
+```
+
+</div>
+
+<script>
+
+
+/* =====================================================
+   VARIABLEN
+   ===================================================== */
+
+let latitude = null;
+let longitude = null;
+
+
+/* =====================================================
+   UHRZEIT
+   ===================================================== */
+
+function setZeitpunkt() {
+
+    const jetzt = new Date();
+
+    const datum =
+        jetzt.toLocaleDateString("de-DE");
+
+    const uhrzeit =
+        jetzt.toLocaleTimeString(
+            "de-DE",
+            {
+                hour: "2-digit",
+                minute: "2-digit"
+            }
+        );
+
+    document.getElementById("zeitpunkt").value =
+        datum + " " + uhrzeit + " Uhr";
+}
+
+
+/* =====================================================
+   GPS STATUS
+   ===================================================== */
+
+function gpsStatus(text, klasse = "") {
+
+    const element =
+        document.getElementById("gpsStatus");
+
+    element.textContent = text;
+
+    element.className =
+        "gps-status " + klasse;
+}
+
+
+/* =====================================================
+   GPS STANDORT ERMITTELN
+   ===================================================== */
+
+function ermittleStandort() {
+
+    if (!navigator.geolocation) {
+
+        gpsStatus(
+            "⚠️ Dieser Browser unterstützt keine Standortbestimmung.",
+            "warnung"
+        );
+
+        return;
+    }
+
+
+    gpsStatus(
+        "📍 Standort wird ermittelt ..."
+    );
+
+
+    navigator.geolocation.getCurrentPosition(
+
+        function(position) {
+
+            latitude =
+                position.coords.latitude;
+
+            longitude =
+                position.coords.longitude;
+
+
+            /* Werte in Formular schreiben */
+
+            document.getElementById(
+                "latitude"
+            ).value = latitude;
+
+
+            document.getElementById(
+                "longitude"
+            ).value = longitude;
+
+
+            const mapsUrl =
+                "https://www.google.com/maps?q=" +
+                latitude +
+                "," +
+                longitude;
+
+
+            document.getElementById(
+                "maps"
+            ).value = mapsUrl;
+
+
+            document.getElementById(
+                "standort"
+            ).value =
+                latitude +
+                ", " +
+                longitude;
+
+
+            /* Google-Maps-Link anzeigen */
+
+            const mapsLink =
+                document.getElementById(
+                    "mapsLink"
+                );
+
+            mapsLink.href =
+                mapsUrl;
+
+            mapsLink.classList.add(
+                "visible"
+            );
+
+
+            gpsStatus(
+                "📍 Standort wurde ermittelt.",
+                "erfolgreich"
+            );
+
+        },
+
+
+        function(error) {
+
+            let meldung =
+                "⚠️ Standort konnte nicht ermittelt werden.";
+
+            if (error.code === 1) {
+
+                meldung =
+                    "⚠️ Standortfreigabe wurde nicht erteilt.";
+
+            }
+
+            if (error.code === 2) {
+
+                meldung =
+                    "⚠️ Standort ist momentan nicht verfügbar.";
+
+            }
+
+            if (error.code === 3) {
+
+                meldung =
+                    "⚠️ Zeitüberschreitung bei der Standortbestimmung.";
+
+            }
+
+            gpsStatus(
+                meldung,
+                "warnung"
+            );
+
+        },
+
+
+        {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 60000
+        }
+
+    );
+
+}
+
+
+/* =====================================================
+   MELDUNGSBUTTON
+   ===================================================== */
+
+function setMeldung(text) {
+
+    document.getElementById(
+        "meldung"
+    ).value = text;
+
+
+    setZeitpunkt();
+
+
+    document.getElementById(
+        "meldung"
+    ).scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+
+/* =====================================================
+   FORMULAR VORBEREITEN
+   ===================================================== */
+
+function prepareForm() {
+
+    setZeitpunkt();
+
+
+    const kennzeichen =
+        document.getElementById(
+            "kennzeichen"
+        ).value;
+
+
+    const meldung =
+        document.getElementById(
+            "meldung"
+        ).value.trim();
+
+
+    let betreff =
+        "🚗 Fahrzeugmeldung " +
+        kennzeichen;
+
+
+    if (meldung !== "") {
+
+        betreff +=
+            " – " +
+            meldung;
+
+    }
+
+
+    document.getElementById(
+        "subject"
+    ).value =
+        betreff;
+
+
+    /*
+       Falls GPS vorhanden ist,
+       nochmals sicherstellen,
+       dass die Werte übertragen werden.
+    */
+
+    if (
+        latitude !== null &&
+        longitude !== null
+    ) {
+
+        document.getElementById(
+            "latitude"
+        ).value =
+            latitude;
+
+
+        document.getElementById(
+            "longitude"
+        ).value =
+            longitude;
+
+
+        const mapsUrl =
+            "https://www.google.com/maps?q=" +
+            latitude +
+            "," +
+            longitude;
+
+
+        document.getElementById(
+            "maps"
+        ).value =
+            mapsUrl;
+
+
+        document.getElementById(
+            "standort"
+        ).value =
+            latitude +
+            ", " +
+            longitude;
+
+    }
+
+}
+
+
+/* =====================================================
+   INITIALISIERUNG
+   ===================================================== */
+
+setZeitpunkt();
+
+ermittleStandort();
+
+</script>
+
+</body>
+
+</html>
