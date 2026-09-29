@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 
 <html lang="de">
+
 <head>
+
 <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+
+>
 
 <title>VW Iltis Typ 183</title>
 
 <style>
+
+/* =====================================================
+   GRUNDEINSTELLUNGEN
+   ===================================================== */
 
 * {
     box-sizing: border-box;
@@ -20,34 +30,55 @@ html {
 
 body {
     margin: 0;
-    padding: 12px;
+    padding: 10px;
+
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
+    line-height: 1.5;
+
     background-color: #f1f3f4;
     color: #333;
 }
 
+
+/* =====================================================
+   HAUPTCONTAINER
+   ===================================================== */
+
 .container {
     width: 100%;
     max-width: 1000px;
+
     margin: 0 auto;
     padding: clamp(16px, 4vw, 30px);
 
     background-color: #ffffff;
+
     border-radius: 12px;
 
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
+    box-shadow:
+        0 2px 12px rgba(0, 0, 0, 0.10);
 }
+
+
+/* =====================================================
+   ÜBERSCHRIFT
+   ===================================================== */
 
 h1 {
     margin: 0 0 12px 0;
 
     text-align: center;
+
     color: #2c3e50;
 
     font-size: clamp(1.6rem, 5vw, 2.2rem);
     line-height: 1.2;
 }
+
+
+/* =====================================================
+   UNTERTITEL
+   ===================================================== */
 
 .subtitle {
     margin: 8px 0;
@@ -57,6 +88,11 @@ h1 {
     font-size: clamp(1rem, 3.5vw, 1.2rem);
     line-height: 1.5;
 }
+
+
+/* =====================================================
+   BILD
+   ===================================================== */
 
 img {
     display: block;
@@ -69,13 +105,20 @@ img {
 
     border-radius: 10px;
 
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
+
+/* =====================================================
+   TECHNISCHE DATEN
+   ===================================================== */
 
 .daten {
     display: grid;
 
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
 
     gap: 25px;
 
@@ -93,90 +136,297 @@ img {
 }
 
 
-/* =================================
-   Buttons
-   ================================= */
+/* =====================================================
+   KONTAKTBEREICH
+   ===================================================== */
 
-.buttons {
-    display: flex;
-    gap: 15px;
-
+.kontakt {
     margin-top: 35px;
     padding-top: 25px;
 
     border-top: 1px solid #ddd;
 }
 
-.button {
-    flex: 1;
+.kontakt h2 {
+    margin: 0 0 8px 0;
 
+    text-align: center;
+
+    color: #2c3e50;
+
+    font-size: clamp(1.35rem, 4vw, 1.7rem);
+}
+
+.kontakt-info {
+    margin: 0 0 20px 0;
+
+    text-align: center;
+
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* =====================================================
+   MELDUNGS-BUTTONS
+   ===================================================== */
+
+.message-buttons {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
 
-    min-height: 55px;
-    padding: 12px 20px;
+    gap: 12px;
 
+    margin-bottom: 22px;
+}
+
+.message-button {
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 14px 18px;
+
+    border: none;
     border-radius: 10px;
 
+    background-color: #2c3e50;
+    color: white;
+
+    font-family: inherit;
     font-size: 1.05rem;
     font-weight: bold;
 
-    text-decoration: none;
     text-align: center;
 
-    transition: transform 0.15s ease,
-                box-shadow 0.15s ease,
-                background-color 0.15s ease;
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.16);
+
+    transition:
+        transform 0.12s ease,
+        background-color 0.12s ease,
+        box-shadow 0.12s ease;
 
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Kontakt-Button */
-
-.button-kontakt {
-    background-color: #2c3e50;
-    color: white;
-
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
-}
-
-.button-kontakt:hover {
+.message-button:hover {
     background-color: #1f2d3a;
 }
 
-/* Zurück-Button */
+.message-button:active {
+    transform: scale(0.97);
 
-.button-zurueck {
-    background-color: #e9ecef;
-    color: #333;
-
-    border: 1px solid #d0d4d8;
+    box-shadow:
+        0 1px 4px rgba(0, 0, 0, 0.15);
 }
 
-.button-zurueck:hover {
-    background-color: #dde1e4;
+
+/* =====================================================
+   EIGENE NACHRICHT
+   ===================================================== */
+
+.eigene-nachricht {
+    margin-top: 8px;
 }
 
-/* Klick-Effekt für Smartphone */
+.eigene-nachricht label {
+    display: block;
 
-.button:active {
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+textarea {
+    display: block;
+
+    width: 100%;
+    min-height: 110px;
+
+    padding: 12px;
+
+    border: 1px solid #cfd4d8;
+    border-radius: 10px;
+
+    background-color: #fff;
+
+    font-family: inherit;
+    font-size: 1rem;
+
+    resize: vertical;
+}
+
+textarea:focus,
+input:focus {
+    outline: none;
+
+    border-color: #2c3e50;
+
+    box-shadow:
+        0 0 0 2px rgba(44, 62, 80, 0.12);
+}
+
+
+/* =====================================================
+   KENNZElCHEN / ZEITPUNKT
+   ===================================================== */
+
+.form-row {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 15px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+
+    min-height: 48px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #cfd4d8;
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+
+/* =====================================================
+   SENDEN-BUTTON
+   ===================================================== */
+
+.submit-button {
+    display: block;
+
+    width: 100%;
+
+    min-height: 60px;
+
+    margin-top: 18px;
+
+    padding: 14px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: #2c3e50;
+    color: white;
+
+    font-family: inherit;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.18);
+
+    transition:
+        transform 0.12s ease,
+        background-color 0.12s ease;
+}
+
+.submit-button:hover {
+    background-color: #1f2d3a;
+}
+
+.submit-button:active {
     transform: scale(0.97);
 }
 
 
-/* =================================
-   Mobile Geräte
-   ================================= */
+/* =====================================================
+   ZURÜCK-BUTTON
+   ===================================================== */
+
+.back-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 55px;
+
+    margin-top: 12px;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    border: 1px solid #d0d4d8;
+
+    background-color: #e9ecef;
+    color: #333;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.12s ease,
+        background-color 0.12s ease;
+}
+
+.back-button:hover {
+    background-color: #dde1e4;
+}
+
+.back-button:active {
+    transform: scale(0.97);
+}
+
+
+/* =====================================================
+   DESKTOP
+   ===================================================== */
+
+@media (min-width: 701px) {
+
+    .message-buttons {
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 12px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
 
 @media (max-width: 700px) {
 
     body {
-        padding: 8px;
+        padding: 7px;
     }
 
     .container {
         padding: 16px 14px;
+
         border-radius: 10px;
     }
 
@@ -190,12 +440,15 @@ img {
 
     img {
         margin: 18px auto;
+
         border-radius: 8px;
     }
 
     .daten {
         grid-template-columns: 1fr;
+
         gap: 0;
+
         margin-top: 20px;
     }
 
@@ -205,36 +458,38 @@ img {
 
     .daten p {
         margin: 0;
+
         padding: 9px 4px;
-        border-bottom: 1px solid #e5e5e5;
+
+        border-bottom:
+            1px solid #e5e5e5;
     }
 
     .daten p:last-child {
         border-bottom: none;
     }
 
-    /* Buttons untereinander */
-
-    .buttons {
-        flex-direction: column;
-        gap: 12px;
-
-        margin-top: 30px;
-        padding-top: 20px;
+    .kontakt {
+        margin-top: 28px;
+        padding-top: 22px;
     }
 
-    .button {
-        width: 100%;
-        min-height: 58px;
+    .message-button {
+        min-height: 60px;
 
         font-size: 1.05rem;
     }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 
-/* =================================
-   Sehr kleine Smartphones
-   ================================= */
+/* =====================================================
+   SEHR KLEINE SMARTPHONES
+   ===================================================== */
 
 @media (max-width: 380px) {
 
@@ -256,13 +511,18 @@ img {
 
     .daten p {
         font-size: 0.92rem;
+
         padding: 8px 2px;
     }
 
-    .button {
-        min-height: 55px;
+    .message-button {
+        min-height: 57px;
+
+        padding: 12px;
+
         font-size: 1rem;
     }
+
 }
 
 </style>
@@ -274,14 +534,23 @@ img {
 <div class="container">
 
 ```
+<!-- =================================================
+     ILTIS INFORMATION
+     ================================================= -->
+
 <h1>Ich bin ein VW-Iltis Typ 183</h1>
 
-<p class="subtitle">
-    Erstzulassung: <strong>29.04.1980</strong>
-</p>
 
 <p class="subtitle">
-    Gedient als <strong>Y-211 062</strong> an der HFlaS,
+    Erstzulassung:
+    <strong>29.04.1980</strong>
+</p>
+
+
+<p class="subtitle">
+    Gedient als
+    <strong>Y-211 062</strong>
+    an der HFlaS,
     der Heeresflugabwehrschule in Rendsburg.
 </p>
 
@@ -292,72 +561,424 @@ img {
 >
 
 
+<!-- =================================================
+     TECHNISCHE DATEN
+     ================================================= -->
+
 <div class="daten">
+
 
     <div>
 
-        <p><strong>Motor:</strong> 55 kW (75 PS) / 1714 ccm</p>
-        <p><strong>Sitzplätze:</strong> 1 + 3</p>
-        <p><strong>Antrieb:</strong> 4×4</p>
-        <p><strong>Leergewicht:</strong> 1550 kg</p>
-        <p><strong>Zulässiges Gesamtgewicht:</strong> 2050 kg</p>
-        <p><strong>Nutzlast:</strong> 500 kg</p>
-        <p><strong>Zuglast gebremst:</strong> 2000 kg</p>
-        <p><strong>Zuglast ungebremst:</strong> 750 kg</p>
-        <p><strong>Länge:</strong> 395,4 cm</p>
-        <p><strong>Breite:</strong> 152,0 cm</p>
-        <p><strong>Höhe:</strong> 183,7 cm</p>
-        <p><strong>Bodenfreiheit:</strong> 22,5 cm</p>
+        <p>
+            <strong>Motor:</strong>
+            55 kW (75 PS) / 1714 ccm
+        </p>
+
+        <p>
+            <strong>Sitzplätze:</strong>
+            1 + 3
+        </p>
+
+        <p>
+            <strong>Antrieb:</strong>
+            4×4
+        </p>
+
+        <p>
+            <strong>Leergewicht:</strong>
+            1550 kg
+        </p>
+
+        <p>
+            <strong>Zulässiges Gesamtgewicht:</strong>
+            2050 kg
+        </p>
+
+        <p>
+            <strong>Nutzlast:</strong>
+            500 kg
+        </p>
+
+        <p>
+            <strong>Zuglast gebremst:</strong>
+            2000 kg
+        </p>
+
+        <p>
+            <strong>Zuglast ungebremst:</strong>
+            750 kg
+        </p>
+
+        <p>
+            <strong>Länge:</strong>
+            395,4 cm
+        </p>
+
+        <p>
+            <strong>Breite:</strong>
+            152,0 cm
+        </p>
+
+        <p>
+            <strong>Höhe:</strong>
+            183,7 cm
+        </p>
+
+        <p>
+            <strong>Bodenfreiheit:</strong>
+            22,5 cm
+        </p>
 
     </div>
 
 
     <div>
 
-        <p><strong>Spurbreite vorn:</strong> 123,0 cm</p>
-        <p><strong>Spurbreite hinten:</strong> 126,0 cm</p>
-        <p><strong>Radstand:</strong> 201,7 cm</p>
-        <p><strong>Höchstgeschwindigkeit:</strong> 130 km/h</p>
-        <p><strong>Tankinhalt:</strong> 85 Liter</p>
-        <p><strong>Reichweite:</strong> ca. 700 km</p>
-        <p><strong>Steigfähigkeit:</strong> 77 %</p>
-        <p><strong>Watfähigkeit:</strong> 60 cm</p>
-        <p><strong>Getriebe:</strong> 5 Vorwärtsgänge + Rückwärtsgang</p>
-        <p><strong>Wenderadius:</strong> 5,5 m</p>
-        <p><strong>Reifen:</strong> 6.50 R16</p>
-        <p><strong>Bordnetz:</strong> 24 Volt</p>
-        <p><strong>Batterien:</strong> 2 × 12 Volt, 45 Ah</p>
+        <p>
+            <strong>Spurbreite vorn:</strong>
+            123,0 cm
+        </p>
+
+        <p>
+            <strong>Spurbreite hinten:</strong>
+            126,0 cm
+        </p>
+
+        <p>
+            <strong>Radstand:</strong>
+            201,7 cm
+        </p>
+
+        <p>
+            <strong>Höchstgeschwindigkeit:</strong>
+            130 km/h
+        </p>
+
+        <p>
+            <strong>Tankinhalt:</strong>
+            85 Liter
+        </p>
+
+        <p>
+            <strong>Reichweite:</strong>
+            ca. 700 km
+        </p>
+
+        <p>
+            <strong>Steigfähigkeit:</strong>
+            77 %
+        </p>
+
+        <p>
+            <strong>Watfähigkeit:</strong>
+            60 cm
+        </p>
+
+        <p>
+            <strong>Getriebe:</strong>
+            5 Vorwärtsgänge + Rückwärtsgang
+        </p>
+
+        <p>
+            <strong>Wenderadius:</strong>
+            5,5 m
+        </p>
+
+        <p>
+            <strong>Reifen:</strong>
+            6.50 R16
+        </p>
+
+        <p>
+            <strong>Bordnetz:</strong>
+            24 Volt
+        </p>
+
+        <p>
+            <strong>Batterien:</strong>
+            2 × 12 Volt, 45 Ah
+        </p>
 
     </div>
 
 </div>
 
 
-<!-- =========================
-     Buttons
-     ========================= -->
+<!-- =================================================
+     KONTAKTFORMULAR
+     ================================================= -->
 
-<div class="buttons">
+<div class="kontakt">
 
-    <a
-        href="https://formspree.io/f/mwlpavol"
-        class="button button-kontakt"
-    >
+
+    <h2>
         📩 Kontakt aufnehmen
-    </a>
+    </h2>
+
+
+    <p class="kontakt-info">
+        Ist dir am Fahrzeug etwas aufgefallen?
+        Wähle einfach die passende Meldung.
+    </p>
+
+
+    <!-- Meldungsbuttons -->
+
+    <div class="message-buttons">
+
+
+        <button
+            type="button"
+            class="message-button"
+            onclick="setMeldung('💡 Das Licht brennt')"
+        >
+            💡 Das Licht brennt
+        </button>
+
+
+        <button
+            type="button"
+            class="message-button"
+            onclick="setMeldung('🚪 Tür oder Fenster offen')"
+        >
+            🚪 Tür oder Fenster offen
+        </button>
+
+
+        <button
+            type="button"
+            class="message-button"
+            onclick="setMeldung('⚠️ Etwas am Fahrzeug aufgefallen')"
+        >
+            ⚠️ Etwas am Fahrzeug aufgefallen
+        </button>
+
+
+        <button
+            type="button"
+            class="message-button"
+            onclick="setMeldung('💥 Mögliche Beschädigung')"
+        >
+            💥 Mögliche Beschädigung
+        </button>
+
+
+    </div>
+
+
+    <!-- =================================================
+         FORMSPREE
+         ================================================= -->
+
+    <form
+        action="https://formspree.io/f/mwlpavol"
+        method="POST"
+        onsubmit="prepareForm()"
+    >
+
+
+        <!-- Kennzeichen -->
+
+        <div class="form-row">
+
+
+            <div class="form-group">
+
+                <label for="kennzeichen">
+                    Kennzeichen
+                </label>
+
+                <input
+                    type="text"
+                    id="kennzeichen"
+                    name="Kennzeichen"
+                    value="Y-211 062"
+                    readonly
+                >
+
+            </div>
+
+
+            <!-- Zeitpunkt -->
+
+            <div class="form-group">
+
+                <label for="zeitpunkt">
+                    Uhrzeit
+                </label>
+
+                <input
+                    type="text"
+                    id="zeitpunkt"
+                    name="Zeitpunkt"
+                    readonly
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Meldung -->
+
+        <div class="eigene-nachricht">
+
+            <label for="meldung">
+                Meldung
+            </label>
+
+            <textarea
+                id="meldung"
+                name="Meldung"
+                placeholder="Hier kannst du noch weitere Informationen eingeben..."
+            ></textarea>
+
+        </div>
+
+
+        <!-- Automatischer Betreff -->
+
+        <input
+            type="hidden"
+            id="subject"
+            name="_subject"
+        >
+
+
+        <!-- Absenden -->
+
+        <button
+            type="submit"
+            class="submit-button"
+        >
+            ✉️ Nachricht senden
+        </button>
+
+
+    </form>
+
+
+    <!-- Zurück -->
 
     <a
         href="javascript:history.back()"
-        class="button button-zurueck"
+        class="back-button"
     >
         ← Zurück
     </a>
+
 
 </div>
 ```
 
 </div>
 
+<script>
+
+/* =====================================================
+   AKTUELLE UHRZEIT EINTRAGEN
+   ===================================================== */
+
+function setZeitpunkt() {
+
+    const jetzt = new Date();
+
+    const datum =
+        jetzt.toLocaleDateString(
+            "de-DE"
+        );
+
+    const uhrzeit =
+        jetzt.toLocaleTimeString(
+            "de-DE",
+            {
+                hour: "2-digit",
+                minute: "2-digit"
+            }
+        );
+
+    document.getElementById(
+        "zeitpunkt"
+    ).value =
+        datum + " " + uhrzeit + " Uhr";
+}
+
+
+/* =====================================================
+   MELDUNGSBUTTON
+   ===================================================== */
+
+function setMeldung(text) {
+
+    document.getElementById(
+        "meldung"
+    ).value = text;
+
+    setZeitpunkt();
+
+    document.getElementById(
+        "meldung"
+    ).scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+}
+
+
+/* =====================================================
+   FORMULAR VORBEREITEN
+   ===================================================== */
+
+function prepareForm() {
+
+    setZeitpunkt();
+
+
+    const kennzeichen =
+        document.getElementById(
+            "kennzeichen"
+        ).value;
+
+
+    const meldung =
+        document.getElementById(
+            "meldung"
+        ).value.trim();
+
+
+    let betreff =
+        "🚗 Fahrzeugmeldung " +
+        kennzeichen;
+
+
+    if (meldung !== "") {
+
+        betreff +=
+            " – " +
+            meldung;
+
+    }
+
+
+    document.getElementById(
+        "subject"
+    ).value = betreff;
+
+}
+
+
+/* =====================================================
+   UHRZEIT BEIM LADEN SETZEN
+   ===================================================== */
+
+setZeitpunkt();
+
+</script>
+
 </body>
+
 </html>
 
